@@ -1,4 +1,5 @@
 require "status/page/version"
+require "status/page/storage"
 require "thor"
 
 module Status
@@ -6,24 +7,24 @@ module Status
     class Error < StandardError; end
     class CLI < Thor
 
-      desc "Pull status of URLs and save into the data store"
+      desc "pull","Pull status of URLs and save into the data store"
       def pull
-        puts ""
+        x = Storage.new
       end
 
-      desc "Query the URLs and output the status periodically on the console and save it to the data store."
+      desc "live","Query the URLs and output the status periodically on the console and save it to the data store."
       def live
       end
 
-      desc "Backup from data store"
+      desc "backup", "Backup from data store"
       def backup(path)
       end
 
-      desc "Restore backup file to datas store"
+      desc "restore", "Restore backup file to datas store"
       def restore(path)
       end
 
-      desc "Show history of gathered data"
+      desc "history", "Show history of gathered data"
       def history
       end
 

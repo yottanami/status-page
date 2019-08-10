@@ -1,0 +1,8 @@
+setting:
+  storage_file: /data/storage.csv
+  interval: 5
+services:
+  - https://status.bitbucket.org/
+  - https://www.cloudflarestatus.com/
+  - https://status.rubygems.org/
+  - https://status.github.com/messages
