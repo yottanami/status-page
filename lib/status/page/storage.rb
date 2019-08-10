@@ -1,5 +1,4 @@
 require "csv"
-require "pry"
 require "status/page/config"
 require "fileutils"
 

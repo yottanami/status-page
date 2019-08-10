@@ -1,7 +1,8 @@
 require "status/page/version"
 require "status/page/storage"
+require "status/page/service"
 require "thor"
-
+require "byebug"
 module Status
   module Page
     class Error < StandardError; end
@@ -9,6 +10,10 @@ module Status
 
       desc "pull","Pull status of URLs and save into the data store"
       def pull
+        service_handler = Service.new
+        statuses = service_handler.pull
+        storage = Storage.new
+        storage.save(statuses)
       end
 
       desc "live","Query the URLs and output the status periodically on the console and save it to the data store."

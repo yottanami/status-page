@@ -1,7 +1,15 @@
 storage_file: storage.csv
 interval: 5
 services:
-  - https://status.bitbucket.org/
-  - https://www.cloudflarestatus.com/
-  - https://status.rubygems.org/
-  - https://status.github.com/messages
+  - name: github
+    provider: statuspage
+    url:  https://kctbh9vrtdwd.statuspage.io/api/v2/
+  - name: bitbucket
+    provider: statuspage
+    url: https://bqlf8qjztdtr.statuspage.io/api/v2/
+  - name: rubygems
+    provider: statuspage
+    url: https://pclby00q90vc.statuspage.io/api/v2/
+  - name: cloudflare
+    provider: statuspage
+    url: https://yh6f0r4529hb.statuspage.io/api/v2/
