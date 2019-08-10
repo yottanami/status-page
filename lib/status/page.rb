@@ -9,7 +9,6 @@ module Status
 
       desc "pull","Pull status of URLs and save into the data store"
       def pull
-        x = Storage.new
       end
 
       desc "live","Query the URLs and output the status periodically on the console and save it to the data store."
@@ -17,11 +16,15 @@ module Status
       end
 
       desc "backup", "Backup from data store"
-      def backup(path)
+      def backup(backup_path)
+        storage_engine = Storage.new
+        storage_engine.backup(backup_path)
       end
 
       desc "restore", "Restore backup file to datas store"
-      def restore(path)
+      def restore(backuped_file)
+        storage_engine = Storage.new
+        storage_engine.restore(backuped_file)
       end
 
       desc "history", "Show history of gathered data"
