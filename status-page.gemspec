@@ -41,4 +41,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "byebug", "~> 11.0"
 
   spec.add_dependency "thor", "~> 0.20"
+  spec.add_dependency "rufus-scheduler", "~> 3.6"
 end

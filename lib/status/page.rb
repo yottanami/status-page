@@ -3,6 +3,7 @@ require "status/page/storage"
 require "status/page/service"
 require "thor"
 require "byebug"
+
 module Status
   module Page
     class Error < StandardError; end
@@ -18,6 +19,20 @@ module Status
 
       desc "live","Query the URLs and output the status periodically on the console and save it to the data store."
       def live
+        service_handler = Service.new
+        statuses = service_handler.pull
+        storage = Storage.new
+
+        # It could work without any gem, but I think
+        # using refuse-scheduler make it more reliable.
+        scheduler = Rufus::Scheduler.new
+        scheduler.every SETTING["update_interval"] do
+          statuses = []
+          statuses = service_handler.pull
+          storage.save(statuses)
+        end
+
+        scheduler.join
       end
 
       desc "backup", "Backup from data store"

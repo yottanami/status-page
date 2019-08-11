@@ -1,6 +1,7 @@
 require 'net/http'
 require 'json'
 require 'status/page/providers/statuspage'
+require 'rufus-scheduler'
 
 module Status
   module Page
@@ -24,6 +25,11 @@ module Status
         end
 
         statuses
+      end
+
+
+      def live
+
       end
     end
   end

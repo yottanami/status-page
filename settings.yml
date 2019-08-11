@@ -1,5 +1,5 @@
 storage_file: storage.csv
-interval: 5
+update_interval: 5m
 services:
   - name: github
     provider: statuspage

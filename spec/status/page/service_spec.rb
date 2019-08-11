@@ -3,6 +3,4 @@ RSpec.describe Status::Page do
   describe "#pull" do
 
   end
-  end
-
 end
