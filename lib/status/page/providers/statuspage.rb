@@ -18,6 +18,7 @@ module Status
           end
 
           status << date_format(response["page"]["updated_at"])
+          status << date_format(Time.now.utc.strftime("%d-%m-%Y %T"))
           status << response["status"]["description"]
           return status
         end
@@ -31,7 +32,7 @@ module Status
         end
 
         def date_format(date)
-          Time.parse(date).strftime("%d-%m-%Y %T")
+          Time.parse(date).utc.strftime("%d-%m-%Y %T")
         end
       end
     end

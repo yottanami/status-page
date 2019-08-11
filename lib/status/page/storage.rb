@@ -15,7 +15,7 @@ module Status
       end
 
       def read_all
-        @csv.read(@file)
+        CSV.read(@file_path)
       end
 
       def backup(backup_path)
