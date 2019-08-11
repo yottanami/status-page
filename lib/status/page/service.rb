@@ -12,6 +12,7 @@ module Status
 
       def pull
         statuses = []
+
         @services.each do |service|
           if service["provider"] == 'statuspage'
             statuses << @statuspage_provider.status(service["url"])
@@ -21,6 +22,7 @@ module Status
             raise "Unknown Server provider form #{service["name"]}"
           end
         end
+
         statuses
       end
     end
