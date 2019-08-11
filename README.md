@@ -1,25 +1,54 @@
 # Status::Page
 A command-line tool that will pull status information from different services, displays the results and saves it into a data store.
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'status-page'
+## Usage
+After downloading the project, enter to the directory of project and then run:
+```
+bundle install
+```
+now you can run the program using bundle exec
+```
+bundle exec exe/status-page
 ```
 
-And then execute:
+### pull
+pull all the status page data from different providers and save into the data store.
+```
+bundle exec exe/status-page pull
+```
 
-    $ bundle
+### live
+pull all the status page data from different providers and save into the data store.
 
-Or install it yourself as:
+```
+bundle exec exe/status-page live
+```
 
-    $ gem install status-page
+### history
+Display all the data which was gathered by the tool
+```
+bundle exec exe/status-page history
+```
 
-## Usage
+### backup
+Takes a path variable, and creates a backup of historic and currently saved data.
+```
+bundle exec exe/status-page backup <path>
+```
 
-TODO: Write usage instructions here
+### restore
+Takes a path variable which is a backup created by the application and restores that data
+```
+bundle exec exe/status-page restore <path>
+```
+
+## Next features
+- Save each service result in different file and use different thread.
+- calculation and save the results as checkpoints to easier access for reports
+- improve restore process to ask user to append
+- Split big backups and update the checkpoints
+- improve comand-prompt interface
+
 
 ## Development
 
