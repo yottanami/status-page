@@ -3,6 +3,11 @@ require "time"
 module Status
   module Page
     module Providers
+
+      # Currently this tool supports StatusPage.io
+      # As there are several web status result,
+      # you can easily add your provide structor like
+      # current sample.
       class Statuspage
 
         def status(url)

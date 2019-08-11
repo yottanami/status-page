@@ -15,6 +15,7 @@ module Status
         statuses = []
 
         @services.each do |service|
+          # If the provider use statusepage.io
           if service["provider"] == 'statuspage'
             statuses << @statuspage_provider.status(service["url"])
 
