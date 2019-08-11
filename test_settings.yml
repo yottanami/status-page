@@ -1,0 +1,9 @@
+storage_file: storage_test.csv
+update_interval: 10s
+services:
+  - name: github
+    provider: statuspage
+    url:  https://kctbh9vrtdwd.statuspage.io/api/v2/
+  - name: bitbucket
+    provider: statuspage
+    url: https://bqlf8qjztdtr.statuspage.io/api/v2/

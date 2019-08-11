@@ -27,10 +27,6 @@ module Status
         statuses
       end
 
-
-      def live
-
-      end
     end
   end
 end
